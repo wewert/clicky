@@ -1,0 +1,64 @@
+[
+  {
+    key: 1,
+    name: "character1",
+    selected: false
+  },
+  {
+    key: 2,
+    name: "character2",
+    selected: false
+  },
+  {
+    key: 3,
+    name: "character3",
+    selected: false
+  },
+  {
+    key: 4,
+    name: "character4",
+    selected: false
+  },
+  {
+    key: 5,
+    name: "character5",
+    selected: false
+  },
+  {
+    key: 6,
+    name: "character6",
+    selected: false
+  },
+  {
+    key: 7,
+    name:"character7",
+    selected: false
+  },
+  {
+    key: 8,
+    name: "character8",
+    selected: false
+  },
+  {
+
+    key: 9,
+    name: "character9",
+    selected: false
+  },
+  {
+    key: 10,
+    name: "character10",
+    selected: false
+  },
+  {
+    key: 11,
+    name: "character11",
+    selected: false
+  },
+  {
+    key: 12,
+    name: "character12",
+    selected: false
+  }
+
+]

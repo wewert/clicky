@@ -1,9 +1,9 @@
 import React from 'react';
-import Images from './images';
+import Image from './Image';
 
-class Card extends React.Componet {
+class Card extends React.Component {
   constructor(props) {
-    super(props) {
+    super(props);
       this.state = {
         key: this.props.id,
         name: this.props.name,
@@ -17,8 +17,8 @@ class Card extends React.Componet {
 
     render() {
       return(
-        <div onClick={() => this.props.counter(this.props.name,this.props.selected)} className={"col-3 mt-3"}>
-          <Image imgSrc={this.props.name} />
+        <div onClick={() => this.props.counter(this.props.character,this.props.selected)} className={"col-3 mt-3"}>
+          <Image imgSrc={this.props.character} />
         </div>
       )
     }
