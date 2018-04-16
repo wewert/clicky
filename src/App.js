@@ -1,103 +1,90 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
 import Card from './Components/Card';
+import Wrapper from "./Components/Wrapper";
+import images from "./images.json"
 import './App.css';
 
 class App extends Component {
   state = {
-    counter: 0,
-    roaders: [
-      {
-        key: 1,
-        name: "character1",
-        selected: false
-      },
-      {
-        key: 2,
-        name: "character2",
-        selected: false
-      },
-      {
-        key: 3,
-        name: "character3",
-        selected: false
-      },
-      {
-        key: 4,
-        name: "character4",
-        selected: false
-      },
-      {
-        key: 5,
-        name: "character5",
-        selected: false
-      },
-      {
-        key: 6,
-        name: "character6",
-        selected: false
-      },
-      {
-        key: 7,
-        name: "character7",
-        selected: false
-      },
-      {
-        key: 8,
-        name: "character8",
-        selected: false
-      },
-      {
-        key: 9,
-        name: "character",
-        selected: false
-      },
-      {
-        key: 10,
-        name: "character10",
-        selected: false
-      },{
-        key: 11,
-        name: "character11",
-        selected: false
-      },
-      {
-        key: 12,
-        name: "character12",
-        selected: false
-      }
-    ]
-  };
+    images: images,
+    score: 0,
+    highScore: 0,
+    clicked: false,
+    text: "",
+    clickedOnImages: []
+  }
 
-  counter = ( name, selectedState) => {
-    let roadersArray = this.state.roaders;
-    roadersArray.sort(function(a, b) {return 0.5 - Math.random()});
-
-    if (selectedState) {
-      roadersArray.forEach(roaders => roaders.selected = false);
-      this.setState({roaders: roadersArray, counter: 0})
-    } else {
-      roadersArray.forEach((roader) => {
-        if (roader.name === name && roader.selected === false) {
-          roader.selected = true;
-          this.setState({roaders: roadersArray, counter: this.state.counter +1})
-        }
-      });
+  shuffleDeck = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
-  };
+
+  }
+
+  clicking = id => {
+    let clickedImage = this.state.images.filter(image => image.id === id)
+
+    console.log("Image id", clickedImage[0].id)
+
+
+    let array = this.state.clickedImages;
+
+    if (array.indexOf(clickedImage[0].id) === -1) {
+
+      array.push(clickedImage[0].id);
+
+      console.log("adding", array)
+      this.setState({ clickedImages: array })
+      this.setState({ text: "Added..." })
+      this.setState({ score: this.state.score + 1 })
+
+      if (array.length > this.state.highScore) {
+
+        this.setState({ highScore: array.length })
+        console.log("High Score", this.state.highScore)
+      }
+
+    } else {
+      console.log("Duplicate Image")
+      this.setState({
+        images: images,
+        score: 0,
+        clicked: false,
+        clickedImages: [],
+        text: "Oh no! Try Again..."
+      })
+    }
+
+
+    this.setState({ images: images })
+    this.shuffleDeck(images)
+
+  }
+
 
   render() {
     return (
-      <wrapper>
-        <Header score={this.state.counter} />
-        <div className={"container"}>
-          <div className={"row"}>
-            {this.state.roaders.map((roader) => <Card key={roader.key} id={roader.key} character={roader.name} selected={roader.selected} counter={this.counter}/>)}
-        </div>
-      </div>
-    </wrapper>
-    )
-  };
+      <Wrapper>
+        <Header
+          score={this.state.score}
+          highScore={this.state.highScore}
+          text={this.state.text}
+        />
+
+
+        {images.map(image =>
+          <Card {...image}
+            id={image.id}
+            key={image.id}
+            clicking={this.clicking}
+
+          />)}
+
+      </Wrapper>
+    );
+  }
 }
 
 export default App;

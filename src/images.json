@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "name": "character1",
+      "image": "src/img/madmax10.jpg",
+      "selected": false
+    },
+    {
+      "id": 2,
+      "name": "character2",
+      "image": "src/img/madmax20.png",
+      "selected": false
+    },
+    {
+      "id": 3,
+      "name": "character3",
+      "image": "src/img/madmax30.jpg",
+      "selected": false
+    },
+    {
+      "id": 4,
+      "name": "character4",
+      "image": "src/img/madmax40.png",
+      "selected": false
+    },
+    {
+      "id": 5,
+      "name": "character5",
+      "image": "src/img/madmax50.jpg",
+      "selected": false
+    },
+    {
+      "id": 6,
+      "name": "character6",
+      "image": "src/img/madmax60.jpg",
+      "selected": false
+    },
+    {
+      "id": 7,
+      "name": "character7",
+      "image": "src/img/madmax70.jpg",
+      "selected": false
+    },
+    {
+      "id": 8,
+      "name": "character8",
+      "image": "src/img/madmax80.jpg",
+      "selected": false
+    },
+    {
+      "id": 9,
+      "name": "character",
+      "image": "src/img/90.jpg",
+      "selected": false
+    },
+    {
+      "id": 10,
+      "name": "character100",
+      "image": "src/img/madmax10.jpg",
+      "selected": false
+    },{
+      "id": 11,
+      "name": "character110",
+      "image": "src/img/madmax10.jpg",
+      "selected": false
+    },
+    {
+      "id": 12,
+      "name": "character120",
+      "image": "src/img/madmax10.jpg",
+      "selected": false
+    }
+]
