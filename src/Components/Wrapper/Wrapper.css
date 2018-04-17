@@ -1,6 +1,7 @@
 .wrapper {
   padding-top: 50px;
-  background: yellow;
+  background-image: url("img/background.jpg");
+  background-size: 100%;
   height: 100%;
   display: flex;
   flex-flow: row wrap;
