@@ -4,6 +4,9 @@ import Card from './Components/Card';
 import Wrapper from "./Components/Wrapper";
 import images from "./images.json"
 import './App.css';
+import image from './madmax10.jpg';
+
+console.log("what is our image", image);
 
 class App extends Component {
   state = {
@@ -12,7 +15,7 @@ class App extends Component {
     highScore: 0,
     clicked: false,
     text: "",
-    clickedOnImages: []
+    clickedImages: []
   }
 
   shuffleDeck = array => {
@@ -20,14 +23,12 @@ class App extends Component {
       let j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-
   }
 
   clicking = id => {
     let clickedImage = this.state.images.filter(image => image.id === id)
 
     console.log("Image id", clickedImage[0].id)
-
 
     let array = this.state.clickedImages;
 
@@ -57,12 +58,9 @@ class App extends Component {
       })
     }
 
-
     this.setState({ images: images })
     this.shuffleDeck(images)
-
   }
-
 
   render() {
     return (
@@ -73,15 +71,12 @@ class App extends Component {
           text={this.state.text}
         />
 
-
         {images.map(image =>
           <Card {...image}
             id={image.id}
             key={image.id}
             clicking={this.clicking}
-
           />)}
-
       </Wrapper>
     );
   }

@@ -1,0 +1,14 @@
+.jumbo {
+    background: rgb(191, 193, 190);
+    margin: 370px;
+    margin-bottom: 10px;
+}
+
+.header {
+   background-color: grey;
+   margin-bottom: 140px;
+}
+
+.subheader {
+    color: brown;
+}
